@@ -8,10 +8,10 @@ RegisterModel registerModelFromJson(String str) => RegisterModel.fromJson(json.d
 String registerModelToJson(RegisterModel data) => json.encode(data.toJson());
 class RegisterModel {
   RegisterModel({
-      String? displayName, 
-      String? userEmail, 
-      String? userPass, 
-      String? confirmPassword,}){
+      String displayName,
+      String userEmail,
+      String userPass,
+      String confirmPassword,}){
     _displayName = displayName;
     _userEmail = userEmail;
     _userPass = userPass;
@@ -24,23 +24,23 @@ class RegisterModel {
     _userPass = json['user_pass'];
     _confirmPassword = json['confirm_password'];
   }
-  String? _displayName;
-  String? _userEmail;
-  String? _userPass;
-  String? _confirmPassword;
-RegisterModel copyWith({  String? displayName,
-  String? userEmail,
-  String? userPass,
-  String? confirmPassword,
+  String _displayName;
+  String _userEmail;
+  String _userPass;
+  String _confirmPassword;
+RegisterModel copyWith({  String displayName,
+  String userEmail,
+  String userPass,
+  String confirmPassword,
 }) => RegisterModel(  displayName: displayName ?? _displayName,
   userEmail: userEmail ?? _userEmail,
   userPass: userPass ?? _userPass,
   confirmPassword: confirmPassword ?? _confirmPassword,
 );
-  String? get displayName => _displayName;
-  String? get userEmail => _userEmail;
-  String? get userPass => _userPass;
-  String? get confirmPassword => _confirmPassword;
+  String get displayName => _displayName;
+  String get userEmail => _userEmail;
+  String get userPass => _userPass;
+  String get confirmPassword => _confirmPassword;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
