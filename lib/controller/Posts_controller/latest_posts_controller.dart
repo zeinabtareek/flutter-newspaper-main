@@ -5,9 +5,17 @@ import '../../services/post_services/latest_posts_services.dart';
 
 class LatestPostsController extends GetxController{
   final services=LatestPostsServices();
-final listOfLatestPosts=<LatestPostsModel>[].obs;
-   getLatestPosts()async{
-    listOfLatestPosts.value =await services.getLatestPosts();
+  LatestPostsModel listOfLatestPosts ;
+    @override
+  void onInit() {
+    getLatestPosts();
   }
+    getLatestPosts()async{
+    try{
+      listOfLatestPosts=await services.getLatestPosts();
+    // print(listOfLatestPosts.data.length);
+  }catch(e){
+      print(e);
+    }}
 }
 

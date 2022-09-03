@@ -156,9 +156,9 @@ class Data {
     _commentCount = json['comment_count'];
     if (json['categories'] != null) {
       _categories = [];
-      json['categories'].forEach((v) {
-        _categories?.add(Dynamic.fromJson(v));
-      });
+      // json['categories'].forEach((v) {
+      //   _categories?.add(Dynamic.fromJson(v));
+      // });
     }
   }
   int _id;

@@ -2,17 +2,16 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
+import 'package:saheefa/controller/Posts_controller/latest_posts_controller.dart';
 import 'package:saheefa/model/Categories/Category.dart';
 import 'package:saheefa/model/News.dart';
-  import 'package:saheefa/screens/pages/newsDetail.dart';
+import 'package:saheefa/screens/pages/newsDetail.dart';
 import 'package:saheefa/screens/widget/categoryListItem.dart';
 import 'package:saheefa/screens/widget/mostSeen.dart';
 
 import 'package:saheefa/util/mycolor.dart';
 
 class Home extends StatelessWidget {
-
-
   List<News> mostSeenlist = [
     News("", "    ", "d"),
     News("", " تقارير وتخفيضات", ""),
@@ -31,12 +30,13 @@ class Home extends StatelessWidget {
         "The Avanti (including the Avanti II) is an American performance sports coupe based on the Studebaker Avanti and marketed through a succession of five different ownership arrangements between 1965 and 2006."),
   ];
 
-   List<CategoryList>categorieslist = [
+  List<CategoryList> categorieslist = [
     CategoryList(1, "المملكة اليوم"),
     CategoryList(1, " تقارير وتخفيضات"),
     CategoryList(1, "الرياضة"),
     CategoryList(1, "الثقافية"),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,39 +48,40 @@ class Home extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Search(),
-              SizedBox(height: 10.0),
-              BuildCategoryListItem(categorieslist: categorieslist),
-              SizedBox(height: 20.0),
-              buildBanner(),
-              SizedBox(height: 10.0),
-              Text(
-                "25/04/202",
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyText1
-                    .copyWith(color: mycolor.red),
-              ),
-              Text(
-                "Most Seen",
-                style: Theme.of(context)
-                    .textTheme
-                    .headline4
-                    .copyWith(color: Colors.black),
-              ),
-              MostSeen(mostSeenlist: mostSeenlist),
-              Text(" latest News",
-                  style: Theme.of(context)
-                      .textTheme
-                      .headline4
-                      .copyWith(color: Colors.black)),
-              BuildLatestNews(latestNews)
-            ],
-          ),
+          child:Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Search(),
+                      SizedBox(height: 10.0),
+                      BuildCategoryListItem(categorieslist: categorieslist),
+                      SizedBox(height: 20.0),
+                      buildBanner(),
+                      SizedBox(height: 10.0),
+                      Text(
+                        "25/04/202",
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyText1
+                            .copyWith(color: mycolor.red),
+                      ),
+                      Text(
+                        "Most Seen",
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline4
+                            .copyWith(color: Colors.black),
+                      ),
+                      MostSeen(mostSeenlist: mostSeenlist),
+                      Text(" latest News",
+                          style: Theme.of(context)
+                              .textTheme
+                              .headline4
+                              .copyWith(color: Colors.black)),
+                      BuildLatestNews(latestNews)
+                    ],
+                  )
+
         ),
       ),
     );
@@ -117,7 +118,9 @@ class Search extends StatelessWidget {
 
 class BuildLatestNews extends StatelessWidget {
   List<News> latestnews;
+
   BuildLatestNews(this.latestnews);
+
   @override
   Widget build(BuildContext context) {
     double _height = MediaQuery.of(context).size.height * 0.6;
@@ -129,12 +132,11 @@ class BuildLatestNews extends StatelessWidget {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-
-              
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => NewsDetails(latestNews:latestnews[index])),
+                    builder: (context) =>
+                        NewsDetails(latestNews: latestnews[index])),
               );
             },
             child: Padding(
