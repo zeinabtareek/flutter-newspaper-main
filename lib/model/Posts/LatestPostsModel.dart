@@ -7,9 +7,9 @@ LatestPostsModel latestPostsModelFromJson(String str) => LatestPostsModel.fromJs
 String latestPostsModelToJson(LatestPostsModel data) => json.encode(data.toJson());
 class LatestPostsModel {
   LatestPostsModel({
-      bool? success, 
-      List<Data>? data, 
-      String? message,}){
+      bool success,
+      List<Data> data,
+      String message,}){
     _success = success;
     _data = data;
     _message = message;
@@ -25,19 +25,19 @@ class LatestPostsModel {
     }
     _message = json['message'];
   }
-  bool? _success;
-  List<Data>? _data;
-  String? _message;
-LatestPostsModel copyWith({  bool? success,
-  List<Data>? data,
-  String? message,
+  bool _success;
+  List<Data> _data;
+  String _message;
+LatestPostsModel copyWith({  bool success,
+  List<Data> data,
+  String message,
 }) => LatestPostsModel(  success: success ?? _success,
   data: data ?? _data,
   message: message ?? _message,
 );
-  bool? get success => _success;
-  List<Data>? get data => _data;
-  String? get message => _message;
+  bool get success => _success;
+  List<Data> get data => _data;
+  String get message => _message;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -80,30 +80,30 @@ Data dataFromJson(String str) => Data.fromJson(json.decode(str));
 String dataToJson(Data data) => json.encode(data.toJson());
 class Data {
   Data({
-      int? id, 
-      int? postAuthor, 
-      String? postDate, 
-      String? postDateGmt, 
-      String? postContent, 
-      String? postTitle, 
-      String? postExcerpt, 
-      String? postStatus, 
-      String? commentStatus, 
-      String? pingStatus, 
-      String? postPassword, 
-      String? postName, 
-      String? toPing, 
-      String? pinged, 
-      String? postModified, 
-      String? postModifiedGmt, 
-      String? postContentFiltered, 
-      int? postParent, 
-      String? guid, 
-      int? menuOrder, 
-      String? postType, 
-      String? postMimeType, 
-      int? commentCount, 
-      List<dynamic>? categories,}){
+      int id,
+      int postAuthor,
+      String postDate,
+      String postDateGmt,
+      String postContent,
+      String postTitle,
+      String postExcerpt,
+      String postStatus,
+      String commentStatus,
+      String pingStatus,
+      String postPassword,
+      String postName,
+      String toPing,
+      String pinged,
+      String postModified,
+      String postModifiedGmt,
+      String postContentFiltered,
+      int postParent,
+      String guid,
+      int menuOrder,
+      String postType,
+      String postMimeType,
+      int commentCount,
+      List<dynamic> categories,}){
     _id = id;
     _postAuthor = postAuthor;
     _postDate = postDate;
@@ -161,54 +161,54 @@ class Data {
       });
     }
   }
-  int? _id;
-  int? _postAuthor;
-  String? _postDate;
-  String? _postDateGmt;
-  String? _postContent;
-  String? _postTitle;
-  String? _postExcerpt;
-  String? _postStatus;
-  String? _commentStatus;
-  String? _pingStatus;
-  String? _postPassword;
-  String? _postName;
-  String? _toPing;
-  String? _pinged;
-  String? _postModified;
-  String? _postModifiedGmt;
-  String? _postContentFiltered;
-  int? _postParent;
-  String? _guid;
-  int? _menuOrder;
-  String? _postType;
-  String? _postMimeType;
-  int? _commentCount;
-  List<dynamic>? _categories;
-Data copyWith({  int? id,
-  int? postAuthor,
-  String? postDate,
-  String? postDateGmt,
-  String? postContent,
-  String? postTitle,
-  String? postExcerpt,
-  String? postStatus,
-  String? commentStatus,
-  String? pingStatus,
-  String? postPassword,
-  String? postName,
-  String? toPing,
-  String? pinged,
-  String? postModified,
-  String? postModifiedGmt,
-  String? postContentFiltered,
-  int? postParent,
-  String? guid,
-  int? menuOrder,
-  String? postType,
-  String? postMimeType,
-  int? commentCount,
-  List<dynamic>? categories,
+  int _id;
+  int _postAuthor;
+  String _postDate;
+  String _postDateGmt;
+  String _postContent;
+  String _postTitle;
+  String _postExcerpt;
+  String _postStatus;
+  String _commentStatus;
+  String _pingStatus;
+  String _postPassword;
+  String _postName;
+  String _toPing;
+  String _pinged;
+  String _postModified;
+  String _postModifiedGmt;
+  String _postContentFiltered;
+  int _postParent;
+  String _guid;
+  int _menuOrder;
+  String _postType;
+  String _postMimeType;
+  int _commentCount;
+  List<dynamic> _categories;
+Data copyWith({  int id,
+  int postAuthor,
+  String postDate,
+  String postDateGmt,
+  String postContent,
+  String postTitle,
+  String postExcerpt,
+  String postStatus,
+  String commentStatus,
+  String pingStatus,
+  String postPassword,
+  String postName,
+  String toPing,
+  String pinged,
+  String postModified,
+  String postModifiedGmt,
+  String postContentFiltered,
+  int postParent,
+  String guid,
+  int menuOrder,
+  String postType,
+  String postMimeType,
+  int commentCount,
+  List<dynamic> categories,
 }) => Data(  id: id ?? _id,
   postAuthor: postAuthor ?? _postAuthor,
   postDate: postDate ?? _postDate,
@@ -234,30 +234,30 @@ Data copyWith({  int? id,
   commentCount: commentCount ?? _commentCount,
   categories: categories ?? _categories,
 );
-  int? get id => _id;
-  int? get postAuthor => _postAuthor;
-  String? get postDate => _postDate;
-  String? get postDateGmt => _postDateGmt;
-  String? get postContent => _postContent;
-  String? get postTitle => _postTitle;
-  String? get postExcerpt => _postExcerpt;
-  String? get postStatus => _postStatus;
-  String? get commentStatus => _commentStatus;
-  String? get pingStatus => _pingStatus;
-  String? get postPassword => _postPassword;
-  String? get postName => _postName;
-  String? get toPing => _toPing;
-  String? get pinged => _pinged;
-  String? get postModified => _postModified;
-  String? get postModifiedGmt => _postModifiedGmt;
-  String? get postContentFiltered => _postContentFiltered;
-  int? get postParent => _postParent;
-  String? get guid => _guid;
-  int? get menuOrder => _menuOrder;
-  String? get postType => _postType;
-  String? get postMimeType => _postMimeType;
-  int? get commentCount => _commentCount;
-  List<dynamic>? get categories => _categories;
+  int get id => _id;
+  int get postAuthor => _postAuthor;
+  String  get postDate => _postDate;
+  String get postDateGmt => _postDateGmt;
+  String get postContent => _postContent;
+  String get postTitle => _postTitle;
+  String get postExcerpt => _postExcerpt;
+  String get postStatus => _postStatus;
+  String get commentStatus => _commentStatus;
+  String get pingStatus => _pingStatus;
+  String get postPassword => _postPassword;
+  String get postName => _postName;
+  String get toPing => _toPing;
+  String get pinged => _pinged;
+  String get postModified => _postModified;
+  String get postModifiedGmt => _postModifiedGmt;
+  String get postContentFiltered => _postContentFiltered;
+  int get postParent => _postParent;
+  String get guid => _guid;
+  int get menuOrder => _menuOrder;
+  String get postType => _postType;
+  String get postMimeType => _postMimeType;
+  int get commentCount => _commentCount;
+  List<dynamic> get categories => _categories;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};

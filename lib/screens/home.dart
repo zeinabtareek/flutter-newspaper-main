@@ -2,21 +2,16 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
-import 'package:saheefa/domain/model/Category.dart';
-import 'package:saheefa/domain/model/News.dart';
-import 'package:saheefa/screens/pages/newsDetail.dart';
+import 'package:saheefa/model/Categories/Category.dart';
+import 'package:saheefa/model/News.dart';
+  import 'package:saheefa/screens/pages/newsDetail.dart';
 import 'package:saheefa/screens/widget/categoryListItem.dart';
 import 'package:saheefa/screens/widget/mostSeen.dart';
 
 import 'package:saheefa/util/mycolor.dart';
 
 class Home extends StatelessWidget {
-  List<CategoryList> categorieslist = [
-    CategoryList(1, "المملكة اليوم"),
-    CategoryList(1, " تقارير وتخفيضات"),
-    CategoryList(1, "الرياضة"),
-    CategoryList(1, "الثقافية"),
-  ];
+
 
   List<News> mostSeenlist = [
     News("", "    ", "d"),
@@ -34,6 +29,13 @@ class Home extends StatelessWidget {
         "The Avanti (including the Avanti II) is an American performance sports coupe based on the Studebaker Avanti and marketed through a succession of five different ownership arrangements between 1965 and 2006."),
     News("", " ",
         "The Avanti (including the Avanti II) is an American performance sports coupe based on the Studebaker Avanti and marketed through a succession of five different ownership arrangements between 1965 and 2006."),
+  ];
+
+   List<CategoryList>categorieslist = [
+    CategoryList(1, "المملكة اليوم"),
+    CategoryList(1, " تقارير وتخفيضات"),
+    CategoryList(1, "الرياضة"),
+    CategoryList(1, "الثقافية"),
   ];
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:saheefa/helper/cache_helper.dart';
+import 'package:saheefa/helper/dio_integration.dart';
 import 'package:saheefa/screens/home.dart';
 import 'package:saheefa/screens/registration.dart';
 
@@ -12,12 +14,26 @@ import 'helper/connection.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  await CacheHelper.init();
+   DioUtilNew.getInstance();
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
 
+class _MyAppState extends State<MyApp> {
 final connection=Get.put(Connection());
+final token =CacheHelper.getData(key: 'token');
+
+@override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    token;
+  }
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -27,8 +43,8 @@ final connection=Get.put(Connection());
         // When navigating to the "/" route, build the FirstScreen widget.
         // '/login': (context) => Login(),
         // When navigating to the "/second" route, build the SecondScreen widget.
-        '/registeration': (context) => Registarion(),
-        '/home': (context) => Home(),
+        // '/registeration': (context) => Registarion(),
+        // '/home': (context) => Home(),
       },
       theme: ThemeData(
         brightness: Brightness.light,
@@ -54,7 +70,7 @@ final connection=Get.put(Connection());
           bodyText1: TextStyle(fontSize: 15.0, fontFamily: "cairo"),
         ),
       ),
-      home: OnBoardingPage(),
+      home:token==null? OnBoardingPage():Home(),
     );
   }
 }

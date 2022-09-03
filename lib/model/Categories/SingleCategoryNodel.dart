@@ -7,9 +7,9 @@ SingleCategoryNodel singleCategoryNodelFromJson(String str) => SingleCategoryNod
 String singleCategoryNodelToJson(SingleCategoryNodel data) => json.encode(data.toJson());
 class SingleCategoryNodel {
   SingleCategoryNodel({
-      bool? success, 
-      Data? data, 
-      String? message,}){
+      bool success,
+      Data data,
+      String message,}){
     _success = success;
     _data = data;
     _message = message;
@@ -20,19 +20,19 @@ class SingleCategoryNodel {
     _data = json['data'] != null ? Data.fromJson(json['data']) : null;
     _message = json['message'];
   }
-  bool? _success;
-  Data? _data;
-  String? _message;
-SingleCategoryNodel copyWith({  bool? success,
-  Data? data,
-  String? message,
+  bool _success;
+  Data _data;
+  String _message;
+SingleCategoryNodel copyWith({  bool success,
+  Data data,
+  String message,
 }) => SingleCategoryNodel(  success: success ?? _success,
   data: data ?? _data,
   message: message ?? _message,
 );
-  bool? get success => _success;
-  Data? get data => _data;
-  String? get message => _message;
+  bool get success => _success;
+  Data get data => _data;
+  String get message => _message;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -56,11 +56,11 @@ Data dataFromJson(String str) => Data.fromJson(json.decode(str));
 String dataToJson(Data data) => json.encode(data.toJson());
 class Data {
   Data({
-      int? termId, 
-      String? name, 
-      String? slug, 
-      int? termGroup, 
-      List<Posts>? posts,}){
+      int  termId,
+      String  name,
+      String slug,
+      int termGroup,
+      List<Posts> posts,}){
     _termId = termId;
     _name = name;
     _slug = slug;
@@ -80,27 +80,27 @@ class Data {
       });
     }
   }
-  int? _termId;
-  String? _name;
-  String? _slug;
-  int? _termGroup;
-  List<Posts>? _posts;
-Data copyWith({  int? termId,
-  String? name,
-  String? slug,
-  int? termGroup,
-  List<Posts>? posts,
+  int _termId;
+  String _name;
+  String _slug;
+  int _termGroup;
+  List<Posts> _posts;
+Data copyWith({  int termId,
+  String name,
+  String slug,
+  int termGroup,
+  List<Posts> posts,
 }) => Data(  termId: termId ?? _termId,
   name: name ?? _name,
   slug: slug ?? _slug,
   termGroup: termGroup ?? _termGroup,
   posts: posts ?? _posts,
 );
-  int? get termId => _termId;
-  String? get name => _name;
-  String? get slug => _slug;
-  int? get termGroup => _termGroup;
-  List<Posts>? get posts => _posts;
+  int get termId => _termId;
+  String get name => _name;
+  String get slug => _slug;
+  int get termGroup => _termGroup;
+  List<Posts> get posts => _posts;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -126,11 +126,11 @@ Posts postsFromJson(String str) => Posts.fromJson(json.decode(str));
 String postsToJson(Posts data) => json.encode(data.toJson());
 class Posts {
   Posts({
-      int? id, 
-      String? postTitle, 
-      String? postName, 
-      String? postContent, 
-      String? postDate,}){
+      int id,
+      String postTitle,
+      String postName,
+      String postContent,
+      String postDate,}){
     _id = id;
     _postTitle = postTitle;
     _postName = postName;
@@ -145,27 +145,27 @@ class Posts {
     _postContent = json['post_content'];
     _postDate = json['post_date'];
   }
-  int? _id;
-  String? _postTitle;
-  String? _postName;
-  String? _postContent;
-  String? _postDate;
-Posts copyWith({  int? id,
-  String? postTitle,
-  String? postName,
-  String? postContent,
-  String? postDate,
+  int _id;
+  String _postTitle;
+  String _postName;
+  String _postContent;
+  String _postDate;
+Posts copyWith({  int id,
+  String postTitle,
+  String postName,
+  String postContent,
+  String postDate,
 }) => Posts(  id: id ?? _id,
   postTitle: postTitle ?? _postTitle,
   postName: postName ?? _postName,
   postContent: postContent ?? _postContent,
   postDate: postDate ?? _postDate,
 );
-  int? get id => _id;
-  String? get postTitle => _postTitle;
-  String? get postName => _postName;
-  String? get postContent => _postContent;
-  String? get postDate => _postDate;
+  int get id => _id;
+  String get postTitle => _postTitle;
+  String  get postName => _postName;
+  String  get postContent => _postContent;
+  String  get postDate => _postDate;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};

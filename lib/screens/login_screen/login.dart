@@ -4,9 +4,10 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:saheefa/facebook_icons.dart';
 import 'package:saheefa/twitter_icons.dart';
 import 'package:saheefa/util/mycolor.dart';
-import '../../controller/login_with_media_controller.dart';
+import '../../controller/Auth_controller/auth_controller.dart';
 import '../../google_icons.dart';
 import '../home.dart';
+import '../registration.dart';
 
 class Login extends StatelessWidget {
   @override
@@ -23,7 +24,7 @@ class _loginBody extends StatefulWidget {
 }
 
 class __loginBodyState extends State<_loginBody> {
-   final controller = Get.put(LoginController());
+   final controller = Get.put(AuthController());
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +64,7 @@ class __loginBodyState extends State<_loginBody> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text("Email"),
-                        SizedBox(height: 10.0),
+                        SizedBox(height: 5.0),
                         Container(
                           child: TextField(
                             controller: controller.nameController,
@@ -88,7 +89,7 @@ class __loginBodyState extends State<_loginBody> {
                         ),
                         SizedBox(height: 16.0),
                         Text("Password"),
-                        SizedBox(height: 10.0),
+                        SizedBox(height: 5.0),
                         Container(
                           child: TextField(
                             controller: controller.passwordController,
@@ -111,7 +112,7 @@ class __loginBodyState extends State<_loginBody> {
                                     spreadRadius: 0.4)
                               ]),
                         ),
-                        SizedBox(height: 10.0),
+                        SizedBox(height: 5.0),
                         Text(
                           "ForgetPassowrd?",
                           style: TextStyle(
@@ -119,7 +120,7 @@ class __loginBodyState extends State<_loginBody> {
                               fontWeight: FontWeight.w300,
                               color: Colors.redAccent),
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 5),
                         Container(
                             height: 60,
                             width: double.infinity,
@@ -145,8 +146,17 @@ class __loginBodyState extends State<_loginBody> {
                             child: Text(
                           "You can login with",
                           style: TextStyle(
-                              fontWeight: FontWeight.w300, fontSize: 18.0),
-                        )),
+                              fontWeight: FontWeight.w300, fontSize: 14.0),
+                        )),   Center(
+                            child: InkWell(
+                              child: Text(
+                          "Create New account ?",
+                          style: TextStyle(
+                                fontWeight: FontWeight.w300, fontSize: 14.0),
+                        ),onTap: (){
+                                Get.to(Registarion());
+                            },
+                            )),
                         SizedBox(height: 10),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -215,7 +225,6 @@ class __loginBodyState extends State<_loginBody> {
                               ),
                               onTap: (){
                                 controller.signInWithFacebook();
-
                                 debugPrint("ddd");
                               },
                             )

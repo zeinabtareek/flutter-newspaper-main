@@ -7,9 +7,9 @@ AllPostsModel allPostsModelFromJson(String str) => AllPostsModel.fromJson(json.d
 String allPostsModelToJson(AllPostsModel data) => json.encode(data.toJson());
 class AllPostsModel {
   AllPostsModel({
-      bool? success, 
-      List<Data>? data, 
-      String? message,}){
+      bool success,
+      List<Data> data,
+      String message,}){
     _success = success;
     _data = data;
     _message = message;
@@ -25,19 +25,19 @@ class AllPostsModel {
     }
     _message = json['message'];
   }
-  bool? _success;
-  List<Data>? _data;
-  String? _message;
-AllPostsModel copyWith({  bool? success,
-  List<Data>? data,
-  String? message,
+  bool _success;
+  List<Data> _data;
+  String _message;
+AllPostsModel copyWith({  bool success,
+  List<Data> data,
+  String message,
 }) => AllPostsModel(  success: success ?? _success,
   data: data ?? _data,
   message: message ?? _message,
 );
-  bool? get success => _success;
-  List<Data>? get data => _data;
-  String? get message => _message;
+  bool get success => _success;
+  List<Data> get data => _data;
+  String get message => _message;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -80,30 +80,30 @@ Data dataFromJson(String str) => Data.fromJson(json.decode(str));
 String dataToJson(Data data) => json.encode(data.toJson());
 class Data {
   Data({
-      int? id, 
-      int? postAuthor, 
-      String? postDate, 
-      String? postDateGmt, 
-      String? postContent, 
-      String? postTitle, 
-      String? postExcerpt, 
-      String? postStatus, 
-      String? commentStatus, 
-      String? pingStatus, 
-      String? postPassword, 
-      String? postName, 
-      String? toPing, 
-      String? pinged, 
-      String? postModified, 
-      String? postModifiedGmt, 
-      String? postContentFiltered, 
-      int? postParent, 
-      String? guid, 
-      int? menuOrder, 
-      String? postType, 
-      String? postMimeType, 
-      int? commentCount, 
-      List<Categories>? categories,}){
+      int id,
+      int postAuthor,
+      String postDate,
+      String postDateGmt,
+      String postContent,
+      String postTitle,
+      String postExcerpt,
+      String postStatus,
+      String commentStatus,
+      String pingStatus,
+      String postPassword,
+      String postName,
+      String toPing,
+      String pinged,
+      String postModified,
+      String postModifiedGmt,
+      String postContentFiltered,
+      int postParent,
+      String guid,
+      int menuOrder,
+      String postType,
+      String postMimeType,
+      int commentCount,
+      List<Categories> categories,}){
     _id = id;
     _postAuthor = postAuthor;
     _postDate = postDate;
@@ -161,54 +161,54 @@ class Data {
       });
     }
   }
-  int? _id;
-  int? _postAuthor;
-  String? _postDate;
-  String? _postDateGmt;
-  String? _postContent;
-  String? _postTitle;
-  String? _postExcerpt;
-  String? _postStatus;
-  String? _commentStatus;
-  String? _pingStatus;
-  String? _postPassword;
-  String? _postName;
-  String? _toPing;
-  String? _pinged;
-  String? _postModified;
-  String? _postModifiedGmt;
-  String? _postContentFiltered;
-  int? _postParent;
-  String? _guid;
-  int? _menuOrder;
-  String? _postType;
-  String? _postMimeType;
-  int? _commentCount;
-  List<Categories>? _categories;
-Data copyWith({  int? id,
-  int? postAuthor,
-  String? postDate,
-  String? postDateGmt,
-  String? postContent,
-  String? postTitle,
-  String? postExcerpt,
-  String? postStatus,
-  String? commentStatus,
-  String? pingStatus,
-  String? postPassword,
-  String? postName,
-  String? toPing,
-  String? pinged,
-  String? postModified,
-  String? postModifiedGmt,
-  String? postContentFiltered,
-  int? postParent,
-  String? guid,
-  int? menuOrder,
-  String? postType,
-  String? postMimeType,
-  int? commentCount,
-  List<Categories>? categories,
+  int _id;
+  int _postAuthor;
+  String _postDate;
+  String _postDateGmt;
+  String _postContent;
+  String _postTitle;
+  String _postExcerpt;
+  String _postStatus;
+  String _commentStatus;
+  String _pingStatus;
+  String _postPassword;
+  String _postName;
+  String _toPing;
+  String _pinged;
+  String _postModified;
+  String _postModifiedGmt;
+  String _postContentFiltered;
+  int _postParent;
+  String _guid;
+  int _menuOrder;
+  String _postType;
+  String _postMimeType;
+  int _commentCount;
+  List<Categories> _categories;
+Data copyWith({  int id,
+  int postAuthor,
+  String postDate,
+  String postDateGmt,
+  String postContent,
+  String postTitle,
+  String postExcerpt,
+  String postStatus,
+  String commentStatus,
+  String pingStatus,
+  String postPassword,
+  String postName,
+  String toPing,
+  String pinged,
+  String postModified,
+  String postModifiedGmt,
+  String postContentFiltered,
+  int postParent,
+  String guid,
+  int menuOrder,
+  String postType,
+  String postMimeType,
+  int commentCount,
+  List<Categories> categories,
 }) => Data(  id: id ?? _id,
   postAuthor: postAuthor ?? _postAuthor,
   postDate: postDate ?? _postDate,
@@ -234,30 +234,30 @@ Data copyWith({  int? id,
   commentCount: commentCount ?? _commentCount,
   categories: categories ?? _categories,
 );
-  int? get id => _id;
-  int? get postAuthor => _postAuthor;
-  String? get postDate => _postDate;
-  String? get postDateGmt => _postDateGmt;
-  String? get postContent => _postContent;
-  String? get postTitle => _postTitle;
-  String? get postExcerpt => _postExcerpt;
-  String? get postStatus => _postStatus;
-  String? get commentStatus => _commentStatus;
-  String? get pingStatus => _pingStatus;
-  String? get postPassword => _postPassword;
-  String? get postName => _postName;
-  String? get toPing => _toPing;
-  String? get pinged => _pinged;
-  String? get postModified => _postModified;
-  String? get postModifiedGmt => _postModifiedGmt;
-  String? get postContentFiltered => _postContentFiltered;
-  int? get postParent => _postParent;
-  String? get guid => _guid;
-  int? get menuOrder => _menuOrder;
-  String? get postType => _postType;
-  String? get postMimeType => _postMimeType;
-  int? get commentCount => _commentCount;
-  List<Categories>? get categories => _categories;
+  int get id => _id;
+  int get postAuthor => _postAuthor;
+  String get postDate => _postDate;
+  String get postDateGmt => _postDateGmt;
+  String get postContent => _postContent;
+  String get postTitle => _postTitle;
+  String get postExcerpt => _postExcerpt;
+  String get postStatus => _postStatus;
+  String get commentStatus => _commentStatus;
+  String get pingStatus => _pingStatus;
+  String get postPassword => _postPassword;
+  String get postName => _postName;
+  String get toPing => _toPing;
+  String get pinged => _pinged;
+  String get postModified => _postModified;
+  String get postModifiedGmt => _postModifiedGmt;
+  String get postContentFiltered => _postContentFiltered;
+  int get postParent => _postParent;
+  String get guid => _guid;
+  int get menuOrder => _menuOrder;
+  String get postType => _postType;
+  String get postMimeType => _postMimeType;
+  int get commentCount => _commentCount;
+  List<Categories> get categories => _categories;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -302,11 +302,11 @@ Categories categoriesFromJson(String str) => Categories.fromJson(json.decode(str
 String categoriesToJson(Categories data) => json.encode(data.toJson());
 class Categories {
   Categories({
-      int? termId, 
-      String? name, 
-      String? slug, 
-      int? termGroup, 
-      Pivot? pivot,}){
+      int termId,
+      String name,
+      String slug,
+      int termGroup,
+      Pivot pivot,}){
     _termId = termId;
     _name = name;
     _slug = slug;
@@ -321,27 +321,27 @@ class Categories {
     _termGroup = json['term_group'];
     _pivot = json['pivot'] != null ? Pivot.fromJson(json['pivot']) : null;
   }
-  int? _termId;
-  String? _name;
-  String? _slug;
-  int? _termGroup;
-  Pivot? _pivot;
-Categories copyWith({  int? termId,
-  String? name,
-  String? slug,
-  int? termGroup,
-  Pivot? pivot,
+  int _termId;
+  String _name;
+  String _slug;
+  int _termGroup;
+  Pivot _pivot;
+Categories copyWith({  int termId,
+  String name,
+  String slug,
+  int termGroup,
+  Pivot pivot,
 }) => Categories(  termId: termId ?? _termId,
   name: name ?? _name,
   slug: slug ?? _slug,
   termGroup: termGroup ?? _termGroup,
   pivot: pivot ?? _pivot,
 );
-  int? get termId => _termId;
-  String? get name => _name;
-  String? get slug => _slug;
-  int? get termGroup => _termGroup;
-  Pivot? get pivot => _pivot;
+  int get termId => _termId;
+  String get name => _name;
+  String get slug => _slug;
+  int get termGroup => _termGroup;
+  Pivot get pivot => _pivot;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -364,8 +364,8 @@ Pivot pivotFromJson(String str) => Pivot.fromJson(json.decode(str));
 String pivotToJson(Pivot data) => json.encode(data.toJson());
 class Pivot {
   Pivot({
-      int? objectId, 
-      int? termTaxonomyId,}){
+      int objectId,
+      int termTaxonomyId,}){
     _objectId = objectId;
     _termTaxonomyId = termTaxonomyId;
 }
@@ -374,15 +374,15 @@ class Pivot {
     _objectId = json['object_id'];
     _termTaxonomyId = json['term_taxonomy_id'];
   }
-  int? _objectId;
-  int? _termTaxonomyId;
-Pivot copyWith({  int? objectId,
-  int? termTaxonomyId,
+  int _objectId;
+  int _termTaxonomyId;
+Pivot copyWith({  int objectId,
+  int termTaxonomyId,
 }) => Pivot(  objectId: objectId ?? _objectId,
   termTaxonomyId: termTaxonomyId ?? _termTaxonomyId,
 );
-  int? get objectId => _objectId;
-  int? get termTaxonomyId => _termTaxonomyId;
+  int get objectId => _objectId;
+  int get termTaxonomyId => _termTaxonomyId;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};

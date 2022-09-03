@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:saheefa/domain/model/Slide.dart';
 
+import '../model/Slide.dart';
 import '../slider.dart';
 import '../widget/Indicator.dart';
  

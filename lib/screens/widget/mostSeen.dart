@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:saheefa/domain/model/News.dart';
+
+import '../../model/News.dart';
 
 class MostSeen extends StatelessWidget {
   List<News> mostSeenlist;

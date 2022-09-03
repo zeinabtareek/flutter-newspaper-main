@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:saheefa/domain/model/Category.dart';
-import 'package:saheefa/util/mycolor.dart';
+import 'package:saheefa/model/Categories/Category.dart';
+ import 'package:saheefa/util/mycolor.dart';
 
 class BuildCategoryListItem extends StatefulWidget {
   const BuildCategoryListItem({

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:saheefa/domain/model/News.dart';
-import 'package:saheefa/util/mycolor.dart';
+ import 'package:saheefa/util/mycolor.dart';
+
+import '../../model/News.dart';
 
 // ignore: must_be_immutable
 class NewsDetails extends StatelessWidget {

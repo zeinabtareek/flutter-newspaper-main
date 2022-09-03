@@ -1,7 +1,12 @@
+import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
+import '../helper/cache_helper.dart';
+import '../screens/home.dart';
 import '../screens/login_screen/login.dart';
  
 
@@ -15,11 +20,13 @@ class _OnBoardingPage   extends State<OnBoardingPage > {
   
     final introKey = GlobalKey<IntroductionScreenState>();
 
-  void _onIntroEnd(context) {
+  void _onIntroEnd(context) async{
     Navigator.of(context).push(
       MaterialPageRoute(builder: (_) => Login()),
     );
   }
+
+
   @override
   Widget build(BuildContext context) {
 
@@ -31,8 +38,6 @@ class _OnBoardingPage   extends State<OnBoardingPage > {
       pageColor: Colors.white,
       imagePadding: EdgeInsets.zero,
     );
-
-
     return SafeArea(
       child: IntroductionScreen(
 

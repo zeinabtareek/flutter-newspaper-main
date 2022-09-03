@@ -7,11 +7,11 @@ import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
  import 'package:twitter_login/twitter_login.dart';
 
-  import '../helper/cache_helper.dart';
-import '../model/AuthModel.dart';
-import '../model/response/RegisterModel.dart';
-import '../screens/home.dart';
-import '../services/auth_services/auth_services.dart';
+  import '../../helper/cache_helper.dart';
+import '../../model/Auth/AuthModel.dart';
+import '../../model/Auth/response/RegisterModel.dart';
+ import '../../screens/home.dart';
+import '../../services/auth_services/auth_services.dart';
 
 class AuthController extends GetxController {
   final nameController = TextEditingController();

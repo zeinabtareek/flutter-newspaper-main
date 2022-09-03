@@ -7,9 +7,9 @@ AllCategoryModel allCategoryModelFromJson(String str) => AllCategoryModel.fromJs
 String allCategoryModelToJson(AllCategoryModel data) => json.encode(data.toJson());
 class AllCategoryModel {
   AllCategoryModel({
-      bool? success, 
-      List<Data>? data, 
-      String? message,}){
+      bool success,
+      List<Data>  data,
+      String  message,}){
     _success = success;
     _data = data;
     _message = message;
@@ -25,19 +25,19 @@ class AllCategoryModel {
     }
     _message = json['message'];
   }
-  bool? _success;
-  List<Data>? _data;
-  String? _message;
-AllCategoryModel copyWith({  bool? success,
-  List<Data>? data,
-  String? message,
+  bool  _success;
+  List<Data> _data;
+  String  _message;
+AllCategoryModel copyWith({  bool  success,
+  List<Data>  data,
+  String  message,
 }) => AllCategoryModel(  success: success ?? _success,
   data: data ?? _data,
   message: message ?? _message,
 );
-  bool? get success => _success;
-  List<Data>? get data => _data;
-  String? get message => _message;
+  bool get success => _success;
+  List<Data> get data => _data;
+  String get message => _message;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -60,10 +60,10 @@ Data dataFromJson(String str) => Data.fromJson(json.decode(str));
 String dataToJson(Data data) => json.encode(data.toJson());
 class Data {
   Data({
-      int? termId, 
-      String? name, 
-      String? slug, 
-      int? termGroup,}){
+      int termId,
+      String name,
+      String slug,
+      int termGroup,}){
     _termId = termId;
     _name = name;
     _slug = slug;
@@ -76,23 +76,23 @@ class Data {
     _slug = json['slug'];
     _termGroup = json['term_group'];
   }
-  int? _termId;
-  String? _name;
-  String? _slug;
-  int? _termGroup;
-Data copyWith({  int? termId,
-  String? name,
-  String? slug,
-  int? termGroup,
+  int _termId;
+  String _name;
+  String _slug;
+  int _termGroup;
+Data copyWith({  int termId,
+  String name,
+  String slug,
+  int termGroup,
 }) => Data(  termId: termId ?? _termId,
   name: name ?? _name,
   slug: slug ?? _slug,
   termGroup: termGroup ?? _termGroup,
 );
-  int? get termId => _termId;
-  String? get name => _name;
-  String? get slug => _slug;
-  int? get termGroup => _termGroup;
+  int get termId => _termId;
+  String get name => _name;
+  String get slug => _slug;
+  int get termGroup => _termGroup;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};

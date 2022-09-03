@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:saheefa/controller/Auth_controller/auth_controller.dart';
 
 import 'package:saheefa/facebook_icons.dart';
 import 'package:saheefa/twitter_icons.dart';
@@ -11,11 +13,7 @@ class Registarion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //   appBar: AppBar(
-      //     automaticallyImplyLeading: true,
-      // ),
-
-      body: _signupBody(),
+     body: _signupBody(),
     );
   }
 }
@@ -27,9 +25,7 @@ class _signupBody extends StatefulWidget {
 
 // ignore: camel_case_types
 class _registerBodyState extends State<_signupBody> {
-  TextEditingController nameController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
-
+   final controller =Get.put(AuthController());
   @override
   Widget build(BuildContext context) {
     final themeData = Theme.of(context);
@@ -62,7 +58,7 @@ class _registerBodyState extends State<_signupBody> {
                           .textTheme
                           .headline3
                           .copyWith(color: mycolor.myCustomBlack)),
-                  Padding(
+                 Padding(
                     padding: const EdgeInsets.only(left: 16.0, right: 16.0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -72,7 +68,7 @@ class _registerBodyState extends State<_signupBody> {
                         SizedBox(height: 10.0),
                         Container(
                           child: TextField(
-                            controller: nameController,
+                            controller: controller.nameController,
                             decoration: InputDecoration(
                               border: OutlineInputBorder(
                                   borderRadius:
@@ -97,7 +93,7 @@ class _registerBodyState extends State<_signupBody> {
                         SizedBox(height: 10.0),
                         Container(
                           child: TextField(
-                            controller: nameController,
+                            controller: controller.emailController,
                             decoration: InputDecoration(
                               border: OutlineInputBorder(
                                   borderRadius:
@@ -122,7 +118,7 @@ class _registerBodyState extends State<_signupBody> {
                         SizedBox(height: 10.0),
                         Container(
                           child: TextField(
-                            controller: nameController,
+                            controller: controller.passwordController,
                             decoration: InputDecoration(
                               border: OutlineInputBorder(
                                   borderRadius:
@@ -147,7 +143,7 @@ class _registerBodyState extends State<_signupBody> {
                         SizedBox(height: 10.0),
                         Container(
                           child: TextField(
-                            controller: nameController,
+                            controller: controller.confirmPassController,
                             decoration: InputDecoration(
                               border: OutlineInputBorder(
                                   borderRadius:
@@ -175,7 +171,10 @@ class _registerBodyState extends State<_signupBody> {
                                 borderRadius: BorderRadius.circular(20)),
                             child: ElevatedButton(
                               child: Text("register"),
-                              onPressed: () => print("it's pressed"),
+                              onPressed: () {
+                                print("it's pressed");
+                                controller.register();
+                              },
                               style: ElevatedButton.styleFrom(
                                 primary: mycolor.myCustomBlack,
                                 onPrimary: Colors.white,
@@ -189,7 +188,7 @@ class _registerBodyState extends State<_signupBody> {
                             child: Text(
                           "You can signup with",
                           style: TextStyle(
-                              fontWeight: FontWeight.w300, fontSize: 18.0),
+                              fontWeight: FontWeight.w300, fontSize: 11.0),
                         )),
                         SizedBox(height: 10),
                         Row(
@@ -258,6 +257,7 @@ class _registerBodyState extends State<_signupBody> {
                       ],
                     ),
                   ),
+
                 ],
               ),
             ),
